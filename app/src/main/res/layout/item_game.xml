@@ -1,0 +1,15 @@
+<!-- res/layout/item_game.xml -->
+
+<Button
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/button_game"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:text="Your Button Label"
+    android:textSize="18sp"
+    android:textColor="@android:color/white"
+    android:background="@drawable/rounded_background_button"
+    android:padding="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp" />
