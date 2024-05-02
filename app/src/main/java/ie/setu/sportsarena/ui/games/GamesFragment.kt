@@ -1,41 +1,49 @@
 package ie.setu.sportsarena.ui.games
-import GameAdapter
-import GamesViewModel
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.navigation.fragment.findNavController
 import ie.setu.sportsarena.R
+import ie.setu.sportsarena.databinding.FragmentGamesBinding
 
 class GamesFragment : Fragment() {
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var gameAdapter: GameAdapter
-    private val viewModel: GamesViewModel by viewModels()
+    private var _binding: FragmentGamesBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val root = inflater.inflate(R.layout.fragment_games, container, false)
+    ): View {
+        _binding = FragmentGamesBinding.inflate(inflater, container, false)
+        val view = binding.root
 
-        // Initialize RecyclerView
-        recyclerView = root.findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        setupButtons()
 
-        // Initialize GameAdapter
-        gameAdapter = GameAdapter()
-        recyclerView.adapter = gameAdapter
+        return view
+    }
 
-        // Observe gamesList LiveData and update the adapter when the list changes
-        viewModel.gamesList.observe(viewLifecycleOwner) { games ->
-            gameAdapter.submitList(games)
+    private fun setupButtons() {
+        binding.buttonCricket.setOnClickListener {
+            findNavController().navigate(R.id.action_gamesFragment_to_venueFragment)
         }
 
-        return root
+        binding.buttonBadminton.setOnClickListener {
+            // Add navigation action for Badminton button
+        }
+
+        binding.buttonFootball.setOnClickListener {
+            // Add navigation action for Football button
+        }
+    }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
