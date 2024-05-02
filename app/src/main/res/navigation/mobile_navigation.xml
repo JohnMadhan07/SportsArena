@@ -21,12 +21,23 @@
         android:id="@+id/navigation_games"
         android:name="ie.setu.sportsarena.ui.games.GamesFragment"
         android:label="@string/title_games"
-        tools:layout="@layout/fragment_games" />
-
+        tools:layout="@layout/fragment_games">
+    <action
+        android:id="@+id/action_gamesFragment_to_venueFragment"
+        app:destination="@id/venueFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="ie.setu.sportsarena.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/venueFragment"
+        android:name="ie.setu.sportsarena.ui.venues.VenueFragment"
+        android:label="Venues"
+        tools:layout="@layout/fragment_venue" />
+
 
 </navigation>
