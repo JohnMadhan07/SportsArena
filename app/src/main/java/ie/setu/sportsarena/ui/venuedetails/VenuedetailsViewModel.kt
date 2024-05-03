@@ -8,12 +8,6 @@ import ie.setu.sportsarena.models.Venue
 
 class VenueDetailsViewModel : ViewModel() {
     private val _venues = MutableLiveData<List<Venue>>()
-
-    // Method to set the list of venues
-    fun setVenues(venues: List<Venue>) {
-        _venues.value = venues
-    }
-
     // Method to get the venue details by ID
     fun getVenueById(venueId: Int): LiveData<Venue?> {
         return _venues.map { venues ->
