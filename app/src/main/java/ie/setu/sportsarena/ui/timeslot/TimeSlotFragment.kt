@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ie.setu.sportsarena.R
 import ie.setu.sportsarena.adapters.TimeSlotAdapter
 
+
 class TimeSlotFragment : Fragment() {
 
     private lateinit var timeSlotViewModel: TimeSlotViewModel

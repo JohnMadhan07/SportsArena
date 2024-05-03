@@ -1,5 +1,4 @@
 package ie.setu.sportsarena.adapters
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,15 +23,36 @@ class TimeSlotAdapter(private var timeSlots: List<TimeSlot>) : RecyclerView.Adap
         return timeSlots.size
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val timeSlotTextView: TextView = itemView.findViewById(R.id.timeSlotTextView)
+
+        init {
+            itemView.setOnClickListener {
+                val timeSlot = timeSlots[adapterPosition]
+                timeSlot.isSelected = !timeSlot.isSelected // Toggle selection state
+                notifyDataSetChanged() // Notify adapter of data change
+            }
+        }
+
         fun bind(timeSlot: TimeSlot) {
             // Bind time slot data to the layout views
             val timeSlotText = "${timeSlot.startTime} - ${timeSlot.endTime}"
-            itemView.findViewById<TextView>(R.id.timeSlotTextView).text = timeSlotText
+            timeSlotTextView.text = timeSlotText
+
+            // Update UI based on selection state
+            if (timeSlot.isSelected) {
+                // Highlight the selected time slot
+                timeSlotTextView.setBackgroundResource(R.drawable.time_slot_bg_highlighted)
+            } else {
+                // Reset background when not selected
+                timeSlotTextView.setBackgroundResource(0)
+            }
         }
     }
+
     fun submitList(newList: List<TimeSlot>) {
         timeSlots = newList
         notifyDataSetChanged() // Notify RecyclerView of the data change
     }
 }
+

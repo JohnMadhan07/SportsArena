@@ -19,9 +19,7 @@ class TimeSlotViewModel : ViewModel() {
             TimeSlot("13:00 AM", "14:00 PM"),
             TimeSlot("14:00 AM", "15:00 PM"),
             TimeSlot("15:00 AM", "16:00 PM"),
-            TimeSlot("16:00 AM", "17:00 PM"),
-
-            // Add more time slots as needed
+            TimeSlot("16:00 AM", "17:00 PM")
         )
         _timeSlots.value = exampleTimeSlots
     }
