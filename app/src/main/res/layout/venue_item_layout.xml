@@ -12,8 +12,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:clickable="true"
-        android:focusable="true"
-        android:onClick="onVenueImageClicked"/>
+        android:focusable="true"/>
 
     <TextView
         android:id="@+id/venueAddressTextView"
