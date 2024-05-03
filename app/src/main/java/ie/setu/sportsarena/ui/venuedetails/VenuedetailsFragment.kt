@@ -8,7 +8,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import ie.setu.sportsarena.R
 import ie.setu.sportsarena.databinding.FragmentVenuedetailsBinding
 import ie.setu.sportsarena.models.Venue
 import ie.setu.sportsarena.ui.venuedetails.VenueDetailsViewModel
@@ -24,13 +26,17 @@ class VenueDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentVenuedetailsBinding.inflate(inflater, container, false)
-        val view = binding.root
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         // Initialize ViewModel
         viewModel = ViewModelProvider(this).get(VenueDetailsViewModel::class.java)
 
         // Access the argument passed from the previous fragment
-        val venueId =args.venueId.toInt()
+        val venueId = args.venueId.toInt()
 
         // Fetch venue details using ViewModel
         viewModel.getVenueById(venueId).observe(viewLifecycleOwner, Observer { venue ->
@@ -40,11 +46,6 @@ class VenueDetailFragment : Fragment() {
                     venueDetailImageView.setImageResource(venue.imageResId)
                     venueDetailTitleTextView.text = venue.name
                     venueDetailDescriptionTextView.text = venue.address
-                    // Set up button click listener for booking venue
-                    bookVenueButton.setOnClickListener {
-                        // Handle booking action
-                        Toast.makeText(context, "Booking venue: ${venue.name}", Toast.LENGTH_SHORT).show()
-                    }
                 }
             } else {
                 // Handle case when venue is not found
@@ -52,7 +53,11 @@ class VenueDetailFragment : Fragment() {
             }
         })
 
-        return view
+        // Set up button click listener for booking venue
+        binding.bookVenueButton.setOnClickListener {
+            // Handle booking action
+            findNavController().navigate(R.id.action_venueDetailFragment_to_timeslotFragment)
+        }
     }
 }
 
