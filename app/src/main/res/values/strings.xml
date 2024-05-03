@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">SportsArena</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_games">Games</string>
     <string name="title_notifications">Notifications</string>
+    <string name="venues">Venues</string>
+    <string name="placeholder">Placeholder</string>
 </resources>
