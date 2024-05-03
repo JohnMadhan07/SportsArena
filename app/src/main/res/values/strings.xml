@@ -4,4 +4,5 @@
     <string name="title_games">Games</string>
     <string name="title_notifications">Notifications</string>
     <string name="venues">Venues</string>
+    <string name="placeholder">Placeholder</string>
 </resources>
