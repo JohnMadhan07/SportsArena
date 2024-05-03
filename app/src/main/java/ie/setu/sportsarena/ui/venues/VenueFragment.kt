@@ -7,13 +7,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ie.setu.sportsarena.R
 import ie.setu.sportsarena.adapters.VenueAdapter
 import ie.setu.sportsarena.models.Venue
 
-class VenueFragment : Fragment() {
+class VenueFragment : Fragment(), VenueAdapter.OnItemClickListener {
+
     private lateinit var venueRecyclerView: RecyclerView
     private lateinit var venueAdapter: VenueAdapter
     private lateinit var venueViewModel: VenueViewModel
@@ -38,7 +40,14 @@ class VenueFragment : Fragment() {
 
     private fun setupRecyclerView() {
         venueAdapter = VenueAdapter()
+        venueAdapter.setOnItemClickListener(this)
         venueRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         venueRecyclerView.adapter = venueAdapter
     }
+
+    override fun onItemClick(venue: Venue) {
+        val action = VenueFragmentDirections.actionVenueFragmentToVenueDetailsFragment(venue.id.toString())
+        findNavController().navigate(action)
+    }
+
 }
