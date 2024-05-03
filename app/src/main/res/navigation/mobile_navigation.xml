@@ -50,6 +50,13 @@
         <argument
             android:name="venueId"
             app:argType="string" />
+        <action
+            android:id="@+id/action_venueDetailFragment_to_timeslotFragment"
+            app:destination="@id/navigation_timeslot" />
     </fragment>
-
+    <fragment
+        android:id="@+id/navigation_timeslot"
+        android:name="ie.setu.sportsarena.ui.timeslot.TimeSlotFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_timeslot" />
 </navigation>
