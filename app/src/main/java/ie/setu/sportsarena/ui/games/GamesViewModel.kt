@@ -8,7 +8,6 @@ class GamesViewModel : ViewModel() {
     val gamesList: LiveData<List<String>> = _gamesList
 
     init {
-        // Example data, you can replace it with your actual data source
         _gamesList.value = listOf("Cricket", "Badminton", "Football")
     }
 }

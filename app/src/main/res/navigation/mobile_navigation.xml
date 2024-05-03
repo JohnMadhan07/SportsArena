@@ -37,7 +37,19 @@
         android:id="@+id/venueFragment"
         android:name="ie.setu.sportsarena.ui.venues.VenueFragment"
         android:label="Venues"
-        tools:layout="@layout/fragment_venue" />
-
+        tools:layout="@layout/fragment_venue" >
+        <action
+            android:id="@+id/action_venueFragment_to_venueDetailsFragment"
+            app:destination="@id/venueDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/venueDetailFragment"
+        android:name="ie.setu.sportsarena.ui.venues.VenueDetailFragment"
+        android:label="VenueDetailFragment"
+        tools:layout="@layout/fragment_venuedetails" >
+        <argument
+            android:name="venueId"
+            app:argType="string" />
+    </fragment>
 
 </navigation>
