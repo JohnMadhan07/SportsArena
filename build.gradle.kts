@@ -8,5 +8,6 @@ plugins {
     id("com.android.application") version "8.2.1" apply false
     id("org.jetbrains.kotlin.android") version "1.9.22" apply false
     id("androidx.navigation.safeargs") version "2.5.1" apply false
+    id("org.jetbrains.kotlin.plugin.parcelize") version "1.7.10" apply false
 }
 
