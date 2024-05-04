@@ -17,7 +17,6 @@ class TimeSlotViewModel : ViewModel() {
     }
 
     fun addTimeSlot(timeSlot: TimeSlot) {
-        Timber.d("Before calling FirebaseDBManager.create(timeSlot)")
         try {
             FirebaseDBManager.create(timeSlot)
             // Add the new time slot to the existing list and update the LiveData
@@ -27,7 +26,6 @@ class TimeSlotViewModel : ViewModel() {
         } catch (e: IllegalArgumentException) {
             Timber.e(e, "Error adding time slot")
         }
-        Timber.d("After calling FirebaseDBManager.create(timeSlot)")
     }
 }
 
