@@ -54,5 +54,6 @@ class TimeSlotAdapter(private var timeSlots: List<TimeSlot>) : RecyclerView.Adap
         timeSlots = newList
         notifyDataSetChanged() // Notify RecyclerView of the data change
     }
+
 }
 

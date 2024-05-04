@@ -3,19 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
-
-    <fragment
-        android:id="@+id/navigation_home"
-        android:name="ie.setu.sportsarena.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home">
-    <action
-        android:id="@+id/action_homeFragment_to_gamesFragment"
-        app:destination="@id/navigation_games"
-        app:enterAnim="@anim/nav_default_enter_anim"
-        app:exitAnim="@anim/nav_default_exit_anim" />
-    </fragment>
+    app:startDestination="@+id/navigation_games">
 
     <fragment
         android:id="@+id/navigation_games"
