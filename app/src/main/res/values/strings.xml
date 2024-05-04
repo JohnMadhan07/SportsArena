@@ -5,4 +5,14 @@
     <string name="title_notifications">Notifications</string>
     <string name="venues">Venues</string>
     <string name="placeholder">Placeholder</string>
+    <string name="sign_in" >Sign In</string>
+    <string name="create_account">Create Account </string>
+    <string name="sign_out">Sign Out </string>
+    <string name="verify_email">Verify Email </string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="emailpassword_title_text">Please Login Below</string>
+    <string name="signed_in">Signed In</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="auth_failed">Authentication Failed</string>
 </resources>
