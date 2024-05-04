@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ie.setu.sportsarena.R
 import ie.setu.sportsarena.adapters.TimeSlotAdapter
-
+import ie.setu.sportsarena.models.TimeSlot
 
 class TimeSlotFragment : Fragment() {
 
@@ -31,6 +31,9 @@ class TimeSlotFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
+
+        // Example: Add a time slot
+        addTimeSlot("9:00 AM", "10:00 AM")
     }
 
     private fun setupRecyclerView() {
@@ -50,5 +53,10 @@ class TimeSlotFragment : Fragment() {
             timeSlotAdapter.submitList(timeSlots)
         }
     }
-}
 
+    // Function to add a new time slot
+    private fun addTimeSlot(startTime: String, endTime: String) {
+        val newTimeSlot = TimeSlot(startTime, endTime)
+        timeSlotViewModel.addTimeSlot(newTimeSlot)
+    }
+}
