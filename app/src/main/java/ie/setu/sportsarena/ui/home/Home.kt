@@ -42,8 +42,7 @@ class Home : AppCompatActivity() {
         loggedInViewModel = ViewModelProvider(this).get(LoggedInViewModel::class.java)
         loggedInViewModel.liveFirebaseUser.observe(this, Observer { firebaseUser ->
             if (firebaseUser != null) {
-                //val currentUser = loggedInViewModel.liveFirebaseUser.value
-                /*if (currentUser != null)*/(loggedInViewModel.liveFirebaseUser.value!!)
+                (loggedInViewModel.liveFirebaseUser.value!!)
             }
         })
 
