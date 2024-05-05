@@ -38,7 +38,7 @@ class TimeSlotAdapter(private var timeSlots: List<TimeSlot>) : RecyclerView.Adap
 
         fun bind(timeSlot: TimeSlot) {
             // Bind time slot data to the layout views
-            val timeSlotText = "${timeSlot.startTime} - ${timeSlot.endTime}"
+            val timeSlotText = "${timeSlot.startTime}  ${timeSlot.endTime}"
             timeSlotTextView.text = timeSlotText
 
             // Update UI based on selection state
