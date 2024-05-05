@@ -8,8 +8,8 @@
         android:id="@+id/venueDetailImageView"
         android:layout_width="0dp"
         android:layout_height="200dp"
+        android:src="@drawable/venue_image_1"
         android:scaleType="centerCrop"
-        android:src="@drawable/dhoni_img"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -21,7 +21,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
-        android:text="Venue Title"
+        android:text="Chepauk Arena"
         app:layout_constraintTop_toBottomOf="@id/venueDetailImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +32,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Venue Description"
+        android:text="Beautiful Pitch in favour of Bowlers!"
         app:layout_constraintTop_toBottomOf="@id/venueDetailTitleTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

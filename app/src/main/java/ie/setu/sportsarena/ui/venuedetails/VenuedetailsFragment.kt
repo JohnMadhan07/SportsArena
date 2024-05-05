@@ -12,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import ie.setu.sportsarena.R
 import ie.setu.sportsarena.databinding.FragmentVenuedetailsBinding
-import ie.setu.sportsarena.models.Venue
 import ie.setu.sportsarena.ui.venuedetails.VenueDetailsViewModel
 
 class VenueDetailFragment : Fragment() {
