@@ -58,6 +58,7 @@ class VenueAdapter : RecyclerView.Adapter<VenueAdapter.ViewHolder>() {
         fun bind(venue: Venue) {
             // Bind venue data to the layout views
             itemView.findViewById<ImageView>(R.id.venueImageView).setImageResource(venue.imageResId)
+            itemView.findViewById<TextView>(R.id.venueNameTextView).text = venue.name
             itemView.findViewById<TextView>(R.id.venueAddressTextView).text = venue.address
         }
     }
